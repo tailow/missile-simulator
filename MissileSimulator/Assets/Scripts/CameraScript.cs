@@ -4,10 +4,6 @@ using UnityEngine;
 
 public enum CameraType
 {
-    MissileTV,
-    FollowMissile,
-    FollowTarget,
-    TargetTV,
     LauncherTV,
     General
 }
@@ -55,7 +51,7 @@ public class CameraScript : MonoBehaviour
         switch (cameraType)
         {
             case CameraType.LauncherTV:
-                thisCamera.fieldOfView = Mathf.Clamp(90 - Vector3.Distance(transform.position, lookTarget) / 15, 5, 90);
+                thisCamera.fieldOfView = Mathf.Clamp(90 - Vector3.Distance(transform.position, lookTarget) / 30, 5, 90);
                 break;
             default:
                 transform.position = new Vector3(lookTarget.x, lookTarget.y, lookTarget.z + 500);
